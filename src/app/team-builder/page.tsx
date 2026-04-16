@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PokemonType, TYPES, getDefensiveMatchups } from '@/data/typeChart';
+import { PokemonType, TYPES, TYPE_CHART, getDefensiveMatchups } from '@/data/typeChart';
 import TypeBadge from '@/components/TypeBadge';
 
 interface PokemonMember {
@@ -101,12 +101,12 @@ export default function TeamBuilderPage() {
     .sort((a, b) => b[1] - a[1]);
 
   // Type coverage - which types are covered offensively (2x+) by at least one team member
+  // A defending type is "covered" if at least one member's type deals super effective damage to it
   const coveredTypes = new Set<PokemonType>();
   for (const member of team) {
     for (const memberType of member.types) {
       for (const defType of TYPES) {
-        const { weaknesses2x, weaknesses4x } = getDefensiveMatchups([defType]);
-        if (weaknesses2x.includes(memberType) || weaknesses4x.includes(memberType)) {
+        if (TYPE_CHART[memberType][defType] > 1) {
           coveredTypes.add(defType);
         }
       }

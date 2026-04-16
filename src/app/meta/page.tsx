@@ -112,12 +112,8 @@ export default function MetaPage() {
   const typeScores: Partial<Record<PokemonType, number>> = {};
   for (const entry of entries) {
     for (const attackType of TYPES) {
-      const mult = entry.types.reduce(
-        (acc, dt) => acc * (getDefensiveMatchups([dt]).weaknesses2x.includes(attackType) ||
-          getDefensiveMatchups([dt]).weaknesses4x.includes(attackType) ? 2 : 1),
-        1
-      );
-      if (mult > 1) {
+      const { weaknesses2x, weaknesses4x } = getDefensiveMatchups(entry.types);
+      if (weaknesses2x.includes(attackType) || weaknesses4x.includes(attackType)) {
         typeScores[attackType] = (typeScores[attackType] || 0) + entry.usageCount;
       }
     }
