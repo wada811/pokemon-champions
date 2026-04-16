@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath: "/pokemon-champions",
+  assetPrefix: "/pokemon-champions",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
