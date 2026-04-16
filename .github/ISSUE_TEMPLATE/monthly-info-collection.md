@@ -1,19 +1,20 @@
 ---
 name: 月次情報収集
-about: 競技ポケモンの最新情報を収集するための月次タスク
-title: '📊 [月次情報収集] {{ date | date("YYYY年MM月") }} — 競技ポケモン最新情報'
+about: ポケモンチャンピオンズの最新情報を収集するための月次タスク
+title: '📊 [月次情報収集] {{ date | date("YYYY年MM月") }} — ポケモンチャンピオンズ最新情報'
 labels: monthly-collection, copilot
 ---
 
 ## 🎯 タスク概要
 
-競技ポケモン（VGC / シングルバトル）の最新情報を以下の信頼できる情報源から収集し、
+ポケモンチャンピオンズを中心に、関連する競技ポケモン情報の最新状況を以下の信頼できる情報源から収集し、
 新しい情報や更新された情報があればこのリポジトリに反映してください。
 
 ## 📚 収集対象の信頼できる情報源
 
 | 情報源 | URL | 収集内容 |
 |--------|-----|----------|
+| Pokemon Official (Pokémon Champions) | https://www.pokemon.com/us/search/pokemon-champions | 公式発表・対応ポケモン・対戦仕様 |
 | Smogon University | https://www.smogon.com/stats/ | 月次使用率統計 |
 | Smogon Strategy Dex | https://www.smogon.com/dex/ | ポケモン型・技構成の推奨 |
 | Pokemon Official (VGC) | https://www.pokemon.com/us/play-pokemon/pokemon-events/rankings/ | VGC大会ランキング |
@@ -25,7 +26,7 @@ labels: monthly-collection, copilot
 ## 📋 収集・確認項目
 
 ### 1. メタゲーム情報
-- [ ] Smogon の最新月次使用率統計（Gen 9 OU / VGC）で上位30匹を確認
+- [ ] ポケモンチャンピオンズ関連の公式発表・公開統計を確認し、利用可能なら上位30匹を整理
 - [ ] 新しく台頭したポケモンや型の確認
 - [ ] 環境で減少・引退したポケモンの確認
 
@@ -34,9 +35,9 @@ labels: monthly-collection, copilot
 - [ ] タイプチャートや技・特性に変更がないか確認（`src/data/typeChart.ts` に影響する可能性）
 - [ ] 新ポケモン・新フォルムの追加がないか確認
 
-### 3. VGC大会情報
-- [ ] 直近の主要大会（Regional / International）の上位チームを確認
-- [ ] 使用率の高いポケモン・型のトレンドを確認
+### 3. 関連大会・対戦環境情報
+- [ ] ポケモンチャンピオンズの公式大会・イベント情報を確認
+- [ ] 必要に応じて VGC / Limitless の上位チームや使用率トレンドを参考情報として確認
 
 ## 📝 作業内容
 
@@ -46,7 +47,7 @@ labels: monthly-collection, copilot
    - タイプチャートの変更 → `src/data/typeChart.ts`
    - README のメタ情報・機能説明の更新 → `README.md`
 2. **変更不要な場合**: このイシューに収集した情報のサマリーをコメントとして記載
-   - 現在の環境トップポケモン（上位10匹程度）
+    - 現在のチャンピオンズ環境トップポケモン（確認可能なら上位10匹程度）
    - 注目すべき変化やトレンド
    - 次回収集時に確認すべき事項
 

@@ -1,6 +1,6 @@
 # ⚡ Pokemon Champions
 
-ポケモンバトルサポートツール集 — A Next.js 14+ web application providing five battle support tools for competitive Pokemon players.
+ポケモンチャンピオンズ向けバトルサポートツール集 — A Next.js 16 web application providing five battle support tools for Pokémon Champions players.
 
 ## Features
 
@@ -8,11 +8,11 @@
 - Select an attacking type and up to two defending types
 - Displays damage multiplier (×0 / ×0.5 / ×1 / ×2 / ×4)
 - Lists weaknesses, resistances, and immunities for any type combination
-- Full Gen 6+ 18×18 type chart stored as static data (no network required)
+- Uses the current 18×18 type chart assumed for Pokémon Champions and modern mainline games (no network required)
 
 ### 💥 ダメージ計算機 (Damage Calculator)
 - Input move power, type, category (physical/special), STAB, and stat values
-- Calculates damage range using the standard Gen 6+ formula
+- Calculates damage range using the standard damage formula currently assumed for Pokémon Champions
 - Shows damage percentage and estimated number of hits to KO
 
 ### 👥 チームビルダー (Team Builder)
@@ -57,6 +57,7 @@ npm start
 
 ## Notes
 
-- Type chart data is fully static (Gen 6+) — no network required for type-checker or damage calculator
+- This project explicitly targets Pokémon Champions
+- Type chart and damage calculations currently assume Pokémon Champions uses the same 18-type chart and standard battle formula as modern mainline games
 - PokeAPI calls are made client-side for Pokemon search features; a network connection is required for those features
 - Meta analysis data is persisted in `localStorage` (no backend required)
