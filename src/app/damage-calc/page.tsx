@@ -79,7 +79,7 @@ export default function DamageCalcPage() {
   // Standard damage formula Gen 6+:
   // floor(floor(floor(floor(2*L/5+2) * Power * A / D) / 50) + 2) * Mods * random(0.85..1.0)
   const step1 = Math.floor((2 * level) / 5 + 2);
-  const step2 = Math.floor(step1 * movePower * effectiveAttack / effectiveDefense / 50);
+  const step2 = Math.floor(Math.floor(step1 * movePower * effectiveAttack / effectiveDefense) / 50);
   const baseDamage = step2 + 2;
   const totalMult = stabMult * typeEffectiveness * attackItemMult * defenseItemMult;
   const minDamage = Math.floor(baseDamage * totalMult * 0.85);
@@ -90,6 +90,8 @@ export default function DamageCalcPage() {
 
   const pctMin = hpStat > 0 ? ((minDamage / hpStat) * 100).toFixed(1) : '0';
   const pctMax = hpStat > 0 ? ((maxDamage / hpStat) * 100).toFixed(1) : '0';
+  const pctMinNum = parseFloat(pctMin);
+  const pctMaxNum = parseFloat(pctMax);
 
   const multColor = (m: number) => {
     if (m === 0) return 'text-gray-500';
@@ -105,13 +107,11 @@ export default function DamageCalcPage() {
   const speedTie = attackerPriority === defenderPriority && attackerSpeed === defenderSpeed;
 
   const koResult = () => {
-    const pctMaxNum = parseFloat(pctMax);
     if (pctMaxNum >= 100) return { label: '確定1発', color: 'text-red-700' };
     if (pctMinNum >= 100) return { label: '乱数1発', color: 'text-red-500' };
-    if (hitsToKOMin <= 2) return { label: `確定${hitsToKOMin}発`, color: 'text-orange-600' };
-    return { label: `${hitsToKOMin}〜${hitsToKOMax}発`, color: 'text-gray-700' };
+    if (hitsToKOMin === hitsToKOMax) return { label: `確定${hitsToKOMin}発`, color: 'text-orange-600' };
+    return { label: `乱数${hitsToKOMin}〜${hitsToKOMax}発`, color: 'text-gray-700' };
   };
-  const pctMinNum = parseFloat(pctMin);
   const ko = koResult();
 
   const ATTACK_ITEMS: ItemBonus[] = ['none', 'choice', 'lifeorb', 'punch', 'burn'];
