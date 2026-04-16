@@ -1,1 +1,1 @@
-# pokemon-champions
+# Pokemon Champions
