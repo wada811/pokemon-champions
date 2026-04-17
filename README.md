@@ -60,3 +60,11 @@ npm start
 - Type chart data is fully static (Gen 6+) — no network required for type-checker or damage calculator
 - PokeAPI calls are made client-side for Pokemon search features; a network connection is required for those features
 - Meta analysis data is persisted in `localStorage` (no backend required)
+
+## 信頼できる情報源の管理 (Trusted Sources)
+
+このリポジトリは毎月1日に GitHub Actions で月次収集 Issue を自動作成し、信頼できる情報源の最新性を保ちます。
+
+- [📚 信頼できる情報源マスター](docs/sources.md) — 収集対象サイト一覧・採用基準・信頼区分・見直しルール
+- [📋 運用方針](docs/operations.md) — 月次収集の流れ・変更基準・記録方法
+- [📂 収集結果アーカイブ](docs/collection-results/) — 月次収集の記録
