@@ -44,7 +44,10 @@ jobs:
 
             | 情報源 | URL | 収集内容 |
             |--------|-----|----------|
+            | Pokemon Official (Pokémon Champions, JP) | https://www.pokemon.co.jp/search/?q=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3%E3%82%BA | 日本語公式発表・国内向け告知 |
             | Pokemon Official (Pokémon Champions) | https://www.pokemon.com/us/search/pokemon-champions | 公式発表・対応ポケモン・対戦仕様 |
+            | ポケモン徹底攻略 | https://yakkun.com/ | 日本語の対戦考察・型・技構成の参考情報 |
+            | ポケモンWiki | https://wiki.xn--rckteqa2e.com/ | 日本語のデータ・仕様整理の参考情報 |
             | Smogon University | https://www.smogon.com/stats/ | 月次使用率統計 |
             | Smogon Strategy Dex | https://www.smogon.com/dex/ | ポケモン型・技構成の推奨 |
             | Pokemon Official (VGC) | https://www.pokemon.com/us/play-pokemon/pokemon-events/rankings/ | VGC大会ランキング |
@@ -58,6 +61,7 @@ jobs:
             ### 0. 情報源の妥当性確認
             - [ ] 各情報源がポケモンチャンピオンズ固有の情報源か、関連タイトル・競技シーンの参考情報かを確認
             - [ ] ポケモンチャンピオンズ固有でない情報を採用する場合は、参考情報であることを明記
+            - [ ] 日本語圏の攻略サイト・情報サイトも確認し、必要に応じて補足情報として採用
 
             ### 1. メタゲーム情報
             - [ ] ポケモンチャンピオンズ関連の公式発表・公開統計を確認し、利用可能なら上位30匹を整理
