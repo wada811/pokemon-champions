@@ -10,8 +10,8 @@ labels: monthly-collection, copilot
 ポケモンチャンピオンズおよび競技ポケモンの最新情報を信頼できる情報源から収集し、
 新しい情報や更新された情報があればこのリポジトリに反映してください。
 
-> 📚 **情報源マスター**: [`docs/sources.md`](../docs/sources.md) — 収集対象URLと信頼区分はこちらを参照
-> 📋 **運用方針**: [`docs/operations.md`](../docs/operations.md) — 変更基準・記録方法はこちらを参照
+> 📚 **情報源マスター**: `docs/sources.md` — 収集対象URLと信頼区分はこちらを参照
+> 📋 **運用方針**: `docs/operations.md` — 変更基準・記録方法はこちらを参照
 
 ## 📋 収集・確認項目
 
@@ -52,7 +52,7 @@ labels: monthly-collection, copilot
    - 注目すべき変化やトレンド
    - 次回収集時に確認すべき事項
 3. **収集結果をファイルに記録**: `docs/collection-results/YYYY-MM.md` を作成
-   - テンプレートは [`docs/collection-results/README.md`](../docs/collection-results/README.md) を参照
+   - テンプレートは `docs/collection-results/README.md` を参照
 
 ## ✅ 完了条件
 
