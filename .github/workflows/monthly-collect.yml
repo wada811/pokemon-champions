@@ -37,54 +37,41 @@ jobs:
 
             const body = `## 🎯 タスク概要
 
-            ポケモンチャンピオンズを中心に、関連する競技ポケモン情報の最新状況を以下の信頼できる情報源から収集し、
+            ポケモンチャンピオンズおよび競技ポケモンの最新情報を信頼できる情報源から収集し、
             新しい情報や更新された情報があればこのリポジトリに反映してください。
 
-            ## 📚 収集対象の信頼できる情報源
-
-            ※ 検索結果 URL は候補発見のための例です。ポケモンチャンピオンズの公開状況や検索仕様により結果が変わる場合があるため、必要に応じて検索語やサイト内検索、Web 検索でも再確認してください。推奨検索語: \`ポケモンチャンピオンズ\` \`pokemon champions\` \`pokemon-champions\` \`ポケモンチャンピオンズ 攻略\`
-
-            | 情報源 | URL | 収集内容 |
-            |--------|-----|----------|
-            | Pokemon Official (Pokémon Champions, JP) | https://www.pokemon.co.jp/search/?q=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%83%81%E3%83%A3%E3%83%B3%E3%83%94%E3%82%AA%E3%83%B3%E3%82%BA | 日本語公式発表・国内向け告知 |
-            | Pokemon Official (Pokémon Champions) | https://www.pokemon.com/us/search/pokemon-champions | 公式発表・対応ポケモン・対戦仕様 |
-            | ポケモン徹底攻略 | https://yakkun.com/ | 日本語の対戦考察・型・技構成の参考情報 |
-            | ポケモンWiki | https://wiki.xn--rckteqa2e.com/ | 日本語のデータ・仕様整理の参考情報 |
-            | Smogon University | https://www.smogon.com/stats/ | 月次使用率統計 |
-            | Smogon Strategy Dex | https://www.smogon.com/dex/ | ポケモン型・技構成の推奨 |
-            | Pokemon Official (VGC) | https://www.pokemon.com/us/play-pokemon/pokemon-events/rankings/ | VGC大会ランキング |
-            | Limitless VGC | https://www.limitlessvgc.com/ | VGC大会結果・レンタルチーム |
-            | Serebii | https://www.serebii.net/ | ゲームの更新情報・新ポケモン情報 |
-            | Bulbapedia | https://bulbapedia.bulbagarden.net/ | ゲームメカニクス・データ更新 |
-            | PokeAPI | https://pokeapi.co/ | APIデータの更新確認 |
+            > 📚 **情報源マスター**: [\`docs/sources.md\`](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/docs/sources.md) — 収集対象URLと信頼区分はこちらを参照
+            > 📋 **運用方針**: [\`docs/operations.md\`](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/docs/operations.md) — 変更基準・記録方法はこちらを参照
 
             ## 📋 収集・確認項目
 
-            ### 0. 情報源の妥当性確認
-            - [ ] 各情報源がポケモンチャンピオンズ固有の情報源か、関連タイトル・競技シーンの参考情報かを確認
-            - [ ] ポケモンチャンピオンズ固有でない情報を採用する場合は、参考情報であることを明記
-            - [ ] 日本語圏の攻略サイト・情報サイトも確認し、必要に応じて補足情報として採用
+            ### 1. 公式情報の確認
+            - [ ] ポケモン公式サイト / Pokemon.com の更新情報・新発表を確認
+            - [ ] VGC 公式ランキングの最新状況を確認
+            - [ ] 最新パッチ・DLC・シーズン更新の確認
 
-            #### 情報源の探し方と判定フロー
-            1. \`ポケモンチャンピオンズ 攻略\` \`ポケモンチャンピオンズ 最新情報\` \`ポケモンチャンピオンズ 対戦\` などで検索して候補を探す
-            2. 候補ページがポケモンチャンピオンズを明示的に扱っているか確認する
-            3. 公式サイト・公式告知・実データに基づく記述があるか確認する
-            4. 他タイトルの情報を流用しているだけのページは参考情報として扱い、チャンピオンズ固有情報としては扱わない
-            5. 採用した情報源は「ポケモンチャンピオンズ固有 / 参考情報」の区分付きで記録する
+            ### 2. ゲームデータの確認
+            - [ ] タイプチャートや技・特性に変更がないか確認（\`src/data/typeChart.ts\` に影響する可能性）
+            - [ ] 新ポケモン・新フォルムの追加がないか確認（Serebii / Bulbapedia）
+            - [ ] PokeAPI のデータ更新状況を確認
 
-            ### 1. メタゲーム情報
-            - [ ] ポケモンチャンピオンズ関連の公式発表・公開統計を確認し、利用可能なら上位30匹を整理
+            ### 3. メタゲーム情報の確認
+            - [ ] Smogon の最新月次使用率統計（Gen / VGC）で上位30匹を確認
+            - [ ] Pokemon HOME ランクマ統計・VGCStats の最新データを確認
             - [ ] 新しく台頭したポケモンや型の確認
             - [ ] 環境で減少・引退したポケモンの確認
 
-            ### 2. ゲームの更新情報
-            - [ ] 最新パッチ・DLC・シーズン更新の確認
-            - [ ] タイプチャートや技・特性に変更がないか確認（\`src/data/typeChart.ts\` に影響する可能性）
-            - [ ] 新ポケモン・新フォルムの追加がないか確認
+            ### 4. VGC大会情報の確認
+            - [ ] 直近の主要大会（Regional / International）の上位チームを確認（Limitless VGC）
+            - [ ] 使用率の高いポケモン・型のトレンドを確認
 
-            ### 3. 関連大会・対戦環境情報
-            - [ ] ポケモンチャンピオンズの公式大会・イベント情報を確認
-            - [ ] 必要に応じて VGC / Limitless の上位チームや使用率トレンドを参考情報として確認
+            ### 5. 情報源の健全性確認
+            - [ ] \`docs/sources.md\` に記載された全情報源がアクセス可能か確認
+            - [ ] 閉鎖・長期停止・信頼性低下した情報源があれば \`docs/sources.md\` の更新 PR を作成
+            - [ ] \`ポケモンチャンピオンズ 攻略\` \`ポケモンチャンピオンズ 最新情報\` \`ポケモンチャンピオンズ 対戦\` などで検索し、追加候補の情報源を探す
+            - [ ] 候補ページがポケモンチャンピオンズを明示的に扱っているか、公式告知や実データに基づく記述があるかを確認する
+            - [ ] 他タイトルの情報を流用しているだけのページは参考情報として扱い、チャンピオンズ固有情報としては扱わない
+            - [ ] 採用した情報源は \`ポケモンチャンピオンズ固有 / 参考情報\` の区分付きで記録する
 
             ## 📝 作業内容
 
@@ -93,18 +80,22 @@ jobs:
             1. **変更が必要な場合**: Pull Request を作成して該当ファイルを更新
                - タイプチャートの変更 → \`src/data/typeChart.ts\`
                - README のメタ情報・機能説明の更新 → \`README.md\`
+               - 情報源一覧の変更 → \`docs/sources.md\`
             2. **変更不要な場合**: このイシューに収集した情報のサマリーをコメントとして記載
-               - 現在のチャンピオンズ環境トップポケモン（確認可能なら上位10匹程度）
+               - 現在の環境トップポケモン（上位10匹程度）
                - 注目すべき変化やトレンド
                - 各情報の情報源区分（ポケモンチャンピオンズ固有 / 参考情報）
                - 次回収集時に確認すべき事項
+            3. **収集結果をファイルに記録**: \`docs/collection-results/${month.replace('年', '-').replace('月', '')}.md\` を作成
+               - テンプレートは [\`docs/collection-results/README.md\`](https://github.com/${context.repo.owner}/${context.repo.repo}/blob/main/docs/collection-results/README.md) を参照
 
             ## ✅ 完了条件
 
-            - [ ] 全情報源を確認済み
+            - [ ] \`docs/sources.md\` 記載の全情報源を確認済み
             - [ ] 情報源がポケモンチャンピオンズ固有か参考情報かを判別済み
             - [ ] 変更が必要なファイルを更新、または変更不要の旨をコメントで報告
-            - [ ] 収集日時と情報源のバージョン/日付を記録`;
+            - [ ] \`docs/collection-results/${month.replace('年', '-').replace('月', '')}.md\` に収集日時・確認情報源・サマリーを記録
+            - [ ] このイシューを Close`;
 
             // Dedent the body (remove leading spaces from template literal indentation)
             const dedented = body.split('\n').map(line => line.replace(/^            /, '')).join('\n');
