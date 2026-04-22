@@ -76,7 +76,7 @@ export default function DamageCalcPage() {
   const attackItemMult = ITEM_MULT[attackItem];
   const defenseItemMult = ITEM_MULT[defenseItem];
 
-  // Standard damage formula Gen 6+:
+  // Standard damage formula currently assumed for Pokémon Champions:
   // floor(floor(floor(floor(2*L/5+2) * Power * A / D) / 50) + 2) * Mods * random(0.85..1.0)
   const step1 = Math.floor((2 * level) / 5 + 2);
   const step2 = Math.floor(Math.floor(step1 * movePower * effectiveAttack / effectiveDefense) / 50);

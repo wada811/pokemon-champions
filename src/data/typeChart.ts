@@ -48,7 +48,7 @@ export const TYPE_LABELS: Record<PokemonType, string> = {
   Fairy: 'フェアリー',
 };
 
-// TYPE_CHART[attacking][defending] = multiplier (Gen 6+)
+// TYPE_CHART[attacking][defending] = multiplier (current 18-type chart assumed for Pokémon Champions)
 export const TYPE_CHART: Record<PokemonType, Record<PokemonType, number>> = {
   Normal:   { Normal:1, Fire:1, Water:1, Electric:1, Grass:1, Ice:1, Fighting:1, Poison:1, Ground:1, Flying:1, Psychic:1, Bug:1, Rock:0.5, Ghost:0, Dragon:1, Dark:1, Steel:0.5, Fairy:1 },
   Fire:     { Normal:1, Fire:0.5, Water:0.5, Electric:1, Grass:2, Ice:2, Fighting:1, Poison:1, Ground:1, Flying:1, Psychic:1, Bug:2, Rock:0.5, Ghost:1, Dragon:0.5, Dark:1, Steel:2, Fairy:1 },
