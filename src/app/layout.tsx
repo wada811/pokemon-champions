@@ -3,7 +3,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 
 export const metadata: Metadata = {
-  title: "Pokemon Champions",
+  title: "ポケモンチャンピオンズ",
   description: "ポケモンバトルサポートツール集",
 };
 

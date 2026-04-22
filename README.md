@@ -1,71 +1,72 @@
-# ⚡ Pokemon Champions
+# ⚡ ポケモンチャンピオンズ
 
-ポケモンチャンピオンズ向けバトルサポートツール集 — A Next.js 16 web application providing five battle support tools for Pokémon Champions players.
+ポケモンチャンピオンズ向けのバトルサポートツール集です。Next.js 16 で構成されたWebアプリとして、対戦準備や確認に使える5つの機能を提供します。
 
-## Features
+## 主な機能
 
-### ⚔️ タイプ相性チェッカー (Type Compatibility Checker)
-- Select an attacking type and up to two defending types
-- Displays damage multiplier (×0 / ×0.5 / ×1 / ×2 / ×4)
-- Lists weaknesses, resistances, and immunities for any type combination
-- Uses the current 18×18 type chart assumed for Pokémon Champions and modern mainline games (no network required)
+### ⚔️ タイプ相性チェッカー
+- 攻撃タイプと防御タイプを最大2つまで選択できます
+- ダメージ倍率（×0 / ×0.5 / ×1 / ×2 / ×4）を表示します
+- 組み合わせごとの弱点・耐性・無効を一覧で確認できます
+- ポケモンチャンピオンズ想定の18タイプ相性表を利用します（ネットワーク不要）
 
-### 💥 ダメージ計算機 (Damage Calculator)
-- Input move power, type, category (physical/special), STAB, and stat values
-- Calculates damage range using the standard damage formula currently assumed for Pokémon Champions
-- Shows damage percentage and estimated number of hits to KO
+### 💥 ダメージ計算機
+- 技の威力・タイプ・分類・STAB・各種数値を入力できます
+- 現時点で想定している標準的なダメージ計算式でダメージ範囲を算出します
+- ダメージ割合とおおよその確定数を表示します
 
-### 👥 チームビルダー (Team Builder)
-- Search Pokemon by English name or Pokedex number (via PokeAPI)
-- Build a team of up to 6 Pokemon
-- Visualizes type coverage (which defending types your team covers offensively)
-- Warns about shared weaknesses among team members
+### 👥 チームビルダー
+- PokeAPI を利用して英語名または図鑑番号でポケモンを検索できます
+- 最大6匹のチームを構築できます
+- 攻撃面のタイプカバレッジを可視化します
+- チーム内で共有している弱点を確認できます
 
-### 📖 ポケモンデータベース (Pokemon Database)
-- Search Pokemon by English name or Pokedex number
-- Displays base stats with visual bar chart
-- Shows abilities (including hidden abilities) and all learnable moves
+### 📖 ポケモンデータベース
+- 英語名または図鑑番号でポケモンを検索できます
+- 種族値をグラフ付きで確認できます
+- 特性（隠れ特性を含む）と覚える技を一覧表示します
 
-### 📊 メタ分析 (Meta Analysis)
-- Record commonly seen Pokemon and their usage frequency
-- Persisted in localStorage (survives page refresh)
-- Suggests counter attack types based on recorded usage counts
-- Usage statistics (total recorded, most-used Pokemon)
+### 📊 メタ分析
+- よく見かけるポケモンと使用回数を記録できます
+- データは `localStorage` に保存され、再読み込み後も保持されます
+- 記録した回数に応じて対策向きの攻撃タイプを提案します
+- 合計記録数や使用数上位のポケモンを確認できます
 
-## Tech Stack
+## 技術スタック
 
 - **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
-- **PokeAPI** (`https://pokeapi.co`) for Pokemon data (team builder, Pokedex, meta analysis)
+- **PokeAPI** (`https://pokeapi.co`) - チームビルダー、ポケモンデータベース、メタ分析のデータ取得に利用
 
-## Getting Started
+## 始め方
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the app.
+[http://localhost:3000](http://localhost:3000) を開くとアプリを確認できます。
 
-## Build
+## ビルド
 
 ```bash
 npm run build
 npm start
 ```
 
-## Notes
+## 補足
 
-- This project explicitly targets Pokémon Champions
-- The type checker currently uses the 18 regular battle types used in Pokémon Champions; the special Stellar type is not included in the matchup matrix
-- The damage calculator is still an approximation based on the standard mainline battle formula and does not yet model all documented Pokémon Champions-specific training/stat rules
-- PokeAPI calls are made client-side for Pokemon search features; a network connection is required for those features
-- Meta analysis data is persisted in `localStorage` (no backend required)
+- このプロジェクトはポケモンチャンピオンズ向けの利用を前提としています
+- タイプ相性チェッカーは18種類の通常タイプを前提としており、ステラタイプは相性表に含めていません
+- ダメージ計算機は標準的な本編計算式ベースの近似であり、ポケモンチャンピオンズ固有仕様のすべてを再現しているわけではありません
+- ポケモン検索系の機能はクライアントサイドで PokeAPI を利用するため、利用時にネットワーク接続が必要です
+- メタ分析のデータは `localStorage` に保存されるため、バックエンドは不要です
 
-## 信頼できる情報源の管理 (Trusted Sources)
+## 信頼できる情報源の管理
 
 このリポジトリは毎月1日に GitHub Actions で月次収集 Issue を自動作成し、信頼できる情報源の最新性を保ちます。
+月次収集では、日本語で確認できる情報源を優先し、記録文面も日本語を基本とします。
 
 - [📚 信頼できる情報源マスター](docs/sources.md) — 収集対象サイト一覧・採用基準・信頼区分・見直しルール
 - [📋 運用方針](docs/operations.md) — 月次収集の流れ・変更基準・記録方法
