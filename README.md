@@ -58,7 +58,8 @@ npm start
 ## Notes
 
 - This project explicitly targets Pokémon Champions
-- Type chart and damage calculations currently assume Pokémon Champions uses the same 18-type chart and standard battle formula as modern mainline games
+- The type checker currently uses the 18 regular battle types used in Pokémon Champions; the special Stellar type is not included in the matchup matrix
+- The damage calculator is still an approximation based on the standard mainline battle formula and does not yet model all documented Pokémon Champions-specific training/stat rules
 - PokeAPI calls are made client-side for Pokemon search features; a network connection is required for those features
 - Meta analysis data is persisted in `localStorage` (no backend required)
 
