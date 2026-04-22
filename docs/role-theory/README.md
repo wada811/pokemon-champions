@@ -14,7 +14,9 @@
 - [overview.md](./overview.md)
   - 理論全体の概要と前提
 - [page-notes.md](./page-notes.md)
-  - 主要ページごとの内容整理
+  - 主要ページ別ドキュメントへの案内ページ
+- [topics/](./topics)
+  - 主要ページごとの個別ドキュメント
 - [reconstructed-guide.md](./reconstructed-guide.md)
   - 構築・育成・立ち回りの観点で再構成した実用ガイド
 
