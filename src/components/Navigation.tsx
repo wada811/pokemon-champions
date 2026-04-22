@@ -8,7 +8,7 @@ const navItems = [
   { href: '/type-checker', label: 'タイプ相性', emoji: '⚔️' },
   { href: '/damage-calc', label: 'ダメージ計算', emoji: '💥' },
   { href: '/team-builder', label: 'チームビルダー', emoji: '👥' },
-  { href: '/pokedex', label: 'ポケモンDB', emoji: '📖' },
+  { href: '/pokedex', label: 'ポケモン図鑑', emoji: '📖' },
   { href: '/meta', label: 'メタ分析', emoji: '📊' },
 ];
 
@@ -21,7 +21,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 text-white font-bold text-xl shrink-0">
             <span>⚡</span>
-            <span className="hidden sm:block">Pokemon Champions</span>
+            <span className="hidden sm:block">ポケモンチャンピオンズ</span>
           </Link>
           <div className="flex gap-1 flex-wrap justify-end">
             {navItems.map((item) => (

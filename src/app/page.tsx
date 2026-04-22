@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <div>
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 mb-3">⚡ Pokemon Champions</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-3">⚡ ポケモンチャンピオンズ</h1>
         <p className="text-gray-500 text-lg">ポケモンバトルサポートツール集</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
