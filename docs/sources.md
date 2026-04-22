@@ -30,7 +30,9 @@
 | 情報源 | URL | 収集内容 | 確認頻度 | 備考 |
 |--------|-----|----------|----------|------|
 | ポケモン公式サイト | https://www.pokemon.co.jp/ | ゲームの更新情報・新発表・DLC情報 | 月1回 | 日本公式 |
+| Pokémon Champions 公式サイト | https://www.pokemonchampions.jp/ | ポケモンチャンピオンズ固有の告知・商品情報・運営情報 | 月1回 | 日本公式 / ポケモンチャンピオンズ固有 |
 | Pokemon.com | https://www.pokemon.com/us/ | 英語圏公式発表・VGCルール更新 | 月1回 | 国際大会の一次情報 |
+| Pokémon Champions Official Site | https://champions.pokemon.com/ | ポケモンチャンピオンズ固有の英語圏向け告知・ゲーム仕様・ニュース | 月1回 | 英語公式 / ポケモンチャンピオンズ固有 |
 | Pokemon Official VGC Rankings | https://www.pokemon.com/us/play-pokemon/pokemon-events/rankings/ | VGC大会公式ランキング | 月1回 | 公式大会結果 |
 | Pokemon Official News | https://www.pokemon.com/us/pokemon-news/ | 新ゲーム・アップデート情報 | 月1回 | 公式ニュース全般 |
 
@@ -50,7 +52,7 @@
 |--------|-----|----------|----------|------|
 | Limitless VGC | https://www.limitlessvgc.com/ | VGC大会結果・上位チーム・レンタルチーム | 月1回 | VGC専門・大会アーカイブが充実 |
 | VGCStats | https://vgcstats.com/ | VGC使用率・順位集計 | 月1回 | Limitless データの統計可視化 |
-| Pokemon HOME ランクマ統計 | https://home.pokemon.com/ja/ | ランクマッチ使用率・技構成統計 | 月1回 | 公式提供の統計データ |
+| Pokemon HOME ランクマ統計 | https://home.pokemon.com/ | ランクマッチ使用率・技構成統計の導線確認 | 月1回 | 公式提供の統計データ / 2026-04 時点で旧 `https://home.pokemon.com/ja/` は 404 |
 
 ---
 
